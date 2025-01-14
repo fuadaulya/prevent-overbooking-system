@@ -1,0 +1,68 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8081:8080"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DBUSER=postgres
+      - DBPASSWORD=postgrespassword
+      - DBNAME=mydb
+      - DBHOST=postgres
+      - PORT=5432
+      - SSL=disable
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    restart: unless-stopped
+    networks:
+      - mynetworks
+
+  postgres:
+    image: postgres:16
+    environment:
+      - POSTGRES_PASSWORD=postgrespassword
+    volumes:
+      - PostgresData:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432/tcp"
+    restart: unless-stopped
+    tty: true
+    hostname: postgres16
+    networks:
+      - mynetworks
+
+  pgadmin4:
+    image: dpage/pgadmin4:8.9
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin@pgadmin.com
+      - PGADMIN_DEFAULT_PASSWORD=mypgadmin
+      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=True
+    volumes:
+      - MainPgadminWorkingDir:/var/lib/pgadmin
+    ports:
+      - "127.0.0.1:8080:80/tcp"
+    restart: unless-stopped
+    tty: true
+    hostname: pgadmin4
+    networks:
+      - mynetworks
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - mynetworks
+
+volumes:
+  PostgresData:
+  MainPgadminWorkingDir:
+  redis_data:
+
+networks:
+  mynetworks:

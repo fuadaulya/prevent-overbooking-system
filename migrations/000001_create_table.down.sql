@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS urls_short_and_target;

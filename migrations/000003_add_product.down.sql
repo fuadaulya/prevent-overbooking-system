@@ -1,0 +1,1 @@
+DELETE FROM products WHERE name IN ('Laptop', 'Mouse', 'Keyboard');
