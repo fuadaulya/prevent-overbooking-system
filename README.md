@@ -4,7 +4,7 @@ Stock management system to prevent overbooking with a stock reservation mechanis
 
 ## Case Study:
 
-```bash
+```
 We are members of the engineering team of an online store. When we look at ratings for our online store application, we received the following facts:
    1. Customers were able to add items to their carts, check out, and then pay. After several days, however, many of our customers received calls from our Customer Service department stating that their orders had been canceled due to stock unavailability.
    2. These bad reviews generally come within a week after our 12.12 event, in which we held a large flash sale and set up other major discounts to promote our store.
