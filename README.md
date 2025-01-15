@@ -2,6 +2,34 @@
 
 Stock management system to prevent overbooking with a stock reservation mechanism using Go, PostgreSQL, and Redis.
 
+## Case Study:
+
+```bash
+We are members of the engineering team of an online store. When we look at ratings for our online store application, we received the following facts:
+   1. Customers were able to add items to their carts, check out, and then pay. After several days, however, many of our customers received calls from our Customer Service department stating that their orders had been canceled due to stock unavailability.
+   2. These bad reviews generally come within a week after our 12.12 event, in which we held a large flash sale and set up other major discounts to promote our store.
+After checking in with our Customer Service and Order Processing departments, we received the following additional facts:
+   1. Our inventory quantities are often misreported, and some items even go as far as having a negative inventory quantity.
+   2. The misreported items are those that performed very well on our 12.12 event.
+   3. Because of these misreported inventory quantities, the Order Processing department was unable to fulfill a lot of orders, and thus requested help from our Customer Service department to call our customers and notify them that we have had to cancel their orders.
+Based on the stated facts above, please do the following things:
+   1. Describe what you think happened that caused those bad reviews during our 12.12 event and why it happened. Put this in a section in your README.md file.
+   2. Based on your analysis, propose a solution that will prevent the incidents from occurring again. Put this in a section in your README.md file.
+   3. Based on your proposed solution, build a Proof of Concept that demonstrates technically how your solution will work.
+The technical requirements for your Proof of Concept are as follows:
+   1. The PoC must be in the form of an API containing as many endpoints as needed.
+      a. The API must use JSON as its message format.
+      b. The API must use proper response codes and error messages.
+   2. The PoC must be runnable locally.
+   3. The PoC must be able to capture and process reasonably detailed information that can be found in an online store’s backend systems.
+   4. The PoC must demonstrate its ability to prevent further incidents from occurring.
+   5. The PoC must contain at least one functional test that can be run from the command line or share postman collection as a file in your repository, which demonstrates the API’s ability to prevent further incidents.
+Aspects of the PoC that we will evaluate also include, but are not limited to:
+   1. Database schema and entity design.
+   2. API endpoints design.
+   3. Logging and error handling.
+```
+
 ## Analysis: Causes of Bad Reviews During Flash Sale Events (e.g., 12.12 Event)
 
 ### What Happened
